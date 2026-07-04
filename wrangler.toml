@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 
 [[kv_namespaces]]
 binding = "SESSION"
-id = "00000000000000000000000000000000"
+id = "bb034605c19a4b669245c60176149468"
 preview_id = "00000000000000000000000000000000"
 
 [vars]
