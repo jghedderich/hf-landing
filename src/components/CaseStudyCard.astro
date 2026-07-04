@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import CaseStudyImage from './CaseStudyImage.astro';
 import { localizedPath, useTranslations, type Locale } from '../i18n/ui';
 import { caseStudyImages } from '../data/case-study-images';
 
@@ -24,13 +24,12 @@ const images = caseStudyImages[slug];
   >
     {
       images && (
-        <div class="aspect-[16/10] overflow-hidden bg-stone-100">
-          <Image
+        <div class="p-4 pb-0 sm:p-5 sm:pb-0">
+          <CaseStudyImage
             src={images.card}
             alt=""
-            class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-            widths={[400, 640, 800]}
-            sizes="(max-width: 640px) 100vw, 50vw"
+            variant="card"
+            class="transition-transform duration-500 group-hover:scale-[1.01]"
           />
         </div>
       )

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
+import CaseStudyImage from '../../../components/CaseStudyImage.astro';
 import SketchUnderline from '../../../components/SketchUnderline.astro';
 import { getCollection } from 'astro:content';
 import { caseStudyImages } from '../../../data/case-study-images';
@@ -60,14 +60,8 @@ const sector = data.sector[locale];
 
     {
       images && (
-        <div class="fade-up mt-10 overflow-hidden rounded-2xl border border-stone-200/80 bg-white/50 shadow-sm">
-          <Image
-            src={images.hero}
-            alt=""
-            class="w-full"
-            widths={[640, 960, 1200]}
-            sizes="(max-width: 768px) 100vw, 768px"
-          />
+        <div class="fade-up mt-10">
+          <CaseStudyImage src={images.hero} alt="" variant="hero" />
         </div>
       )
     }
@@ -92,14 +86,8 @@ const sector = data.sector[locale];
 
     {
       images?.gallery.map((image) => (
-        <div class="fade-up mt-8 overflow-hidden rounded-2xl border border-stone-200/80 bg-white/50 shadow-sm">
-          <Image
-            src={image}
-            alt=""
-            class="w-full"
-            widths={[640, 960, 1200]}
-            sizes="(max-width: 768px) 100vw, 768px"
-          />
+        <div class="fade-up mt-8">
+          <CaseStudyImage src={image} alt="" variant="hero" />
         </div>
       ))
     }
