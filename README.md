@@ -23,7 +23,7 @@ Configure `.env`:
 pnpm dev
 ```
 
-Visit `http://localhost:4321/en/`
+Visit `http://localhost:4321/`
 
 ## Build
 

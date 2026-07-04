@@ -1,14 +1,14 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import CaseStudyImage from '../../../components/CaseStudyImage.astro';
-import SketchUnderline from '../../../components/SketchUnderline.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyImage from '../../components/CaseStudyImage.astro';
+import SketchUnderline from '../../components/SketchUnderline.astro';
 import { getCollection } from 'astro:content';
-import { caseStudyImages } from '../../../data/case-study-images';
+import { caseStudyImages } from '../../data/case-study-images';
 import {
   localizedPath,
   useTranslations,
   type Locale,
-} from '../../../i18n/ui';
+} from '../../i18n/ui';
 
 export async function getStaticPaths() {
   const studies = await getCollection('caseStudies');

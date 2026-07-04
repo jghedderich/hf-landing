@@ -16,6 +16,9 @@ export function getLocaleFromUrl(url: URL): Locale {
 
 export function localizedPath(path: string, locale: Locale): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
+  if (locale === defaultLocale) {
+    return normalized;
+  }
   if (normalized === '/') return `/${locale}/`;
   return `/${locale}${normalized}`;
 }
