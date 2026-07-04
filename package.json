@@ -1,0 +1,29 @@
+{
+  "name": "hf-landing",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.1.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/alegreya": "^5.2.6",
+    "@fontsource/ibm-plex-mono": "^5.2.6",
+    "@fontsource/instrument-sans": "^5.2.6",
+    "astro": "^7.0.6",
+    "resend": "^6.17.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.3"
+  }
+}

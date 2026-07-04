@@ -1,0 +1,26 @@
+{
+  "slug": "terepaima",
+  "order": 2,
+  "title": {
+    "en": "Inmobiliaria Terepaima",
+    "es": "Inmobiliaria Terepaima"
+  },
+  "sector": {
+    "en": "Real Estate · Operations",
+    "es": "Inmobiliaria · Operaciones"
+  },
+  "year": "2024",
+  "url": "https://holacondominio.com",
+  "problem": {
+    "en": "Inmobiliaria Terepaima ran on Microsoft Access. As data grew, the system became slow, unreliable, and difficult to maintain — making daily condominium operations harder than they needed to be.",
+    "es": "Inmobiliaria Terepaima operaba con Microsoft Access. A medida que crecían los datos, el sistema se volvió lento, poco confiable y difícil de mantener — complicando el trabajo diario de administración de condominios."
+  },
+  "built": {
+    "en": "We delivered a web admin dashboard that centralizes condominium operations. Owners sign in to report payments and review their balance. Admins manage the full dataset with role-based access — so everyone works within their scope.",
+    "es": "Entregamos un panel web de administración que centraliza las operaciones de condominios. Los propietarios inician sesión para reportar pagos y revisar su saldo. Los administradores gestionan toda la información con acceso según roles — para que cada quien opere dentro de su ámbito."
+  },
+  "result": {
+    "en": "A legacy bottleneck became a platform the team can trust. Operations run faster, data stays consistent, and the business has room to grow without outgrowing its tools again.",
+    "es": "Un cuello de botella heredado se convirtió en una plataforma en la que el equipo puede confiar. Las operaciones son más ágiles, los datos se mantienen consistentes y el negocio puede crecer sin volver a quedarse corto con sus herramientas."
+  }
+}

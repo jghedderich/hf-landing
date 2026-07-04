@@ -1,0 +1,26 @@
+{
+  "slug": "agroshow",
+  "order": 1,
+  "title": {
+    "en": "Agroshow",
+    "es": "Agroshow"
+  },
+  "sector": {
+    "en": "Agriculture · Marketplace",
+    "es": "Agricultura · Marketplace"
+  },
+  "year": "2023–2025",
+  "url": "https://agroshow.info",
+  "problem": {
+    "en": "Agroshow ran on WordPress — slow, hard to secure, and painful to maintain. As the agricultural directory grew, the business could not rely on it to run day-to-day operations.",
+    "es": "Agroshow funcionaba con WordPress: lento, difícil de asegurar y complicado de mantener. A medida que el directorio agrícola crecía, el negocio no podía depender de él para operar día a día."
+  },
+  "built": {
+    "en": "We rebuilt Agroshow as a modern platform and, over time, shaped it into two focused applications — a public directory and an admin app — so companies could manage subscriptions, catalogs, and operations in one place. Visitors browse and contact businesses with ease. An assistant handles routine customer questions and brings in a person when the conversation needs it.",
+    "es": "Reconstruimos Agroshow como una plataforma moderna y, con el tiempo, la organizamos en dos aplicaciones enfocadas — un directorio público y una app administrativa — para que las empresas gestionaran suscripciones, catálogos y operaciones en un solo lugar. Los visitantes encuentran y contactan negocios con facilidad. Un asistente responde preguntas frecuentes y escala a una persona cuando la conversación lo requiere."
+  },
+  "result": {
+    "en": "The operational side of the business transformed. Teams work faster, the catalog scales cleanly, and the platform reaches audiences in English and Spanish — with leads that do not get lost along the way.",
+    "es": "El lado operativo del negocio se transformó. Los equipos trabajan más rápido, el catálogo escala con claridad y la plataforma llega a audiencias en inglés y español — con prospectos que no se pierden en el camino."
+  }
+}

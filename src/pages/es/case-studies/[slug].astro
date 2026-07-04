@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import SketchUnderline from '../../../components/SketchUnderline.astro';
+import { getCollection } from 'astro:content';
+import { caseStudyImages } from '../../../data/case-study-images';
+import {
+  localizedPath,
+  useTranslations,
+  type Locale,
+} from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('caseStudies');
+  return studies.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+export const prerender = true;
+
+interface Props {
+  entry: Awaited<ReturnType<typeof getCollection<'caseStudies'>>>[number];
+}
+
+const { entry } = Astro.props;
+const locale = (Astro.currentLocale ?? 'es') as Locale;
+const t = useTranslations(locale);
+const data = entry.data;
+const images = caseStudyImages[data.slug];
+const title = data.title[locale];
+const sector = data.sector[locale];
+---
+
+<BaseLayout
+  title={`${title} — HF Software`}
+  description={data.problem[locale]}
+>
+  <article class="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:pt-16">
+    <header class="fade-up">
+      <p class="font-mono text-xs uppercase tracking-wider text-muted">
+        {sector} · {data.year}
+      </p>
+      <h1
+        class="mt-3 font-sans text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+      >
+        {title}
+      </h1>
+      <SketchUnderline class="mt-4" width={140} />
+      <a
+        href={data.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-block font-mono text-xs text-accent no-underline hover:underline"
+      >
+        {t.caseStudy.liveSite} ↗
+      </a>
+    </header>
+
+    {
+      images && (
+        <div class="fade-up mt-10 overflow-hidden rounded-2xl border border-stone-200/80 bg-white/50 shadow-sm">
+          <Image
+            src={images.hero}
+            alt=""
+            class="w-full"
+            widths={[640, 960, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+        </div>
+      )
+    }
+
+    <section class="fade-up mt-12">
+      <h2 class="font-sans text-lg font-semibold tracking-tight text-ink">
+        {t.caseStudy.problem}
+      </h2>
+      <p class="mt-3 font-serif text-lg leading-relaxed text-muted">
+        {data.problem[locale]}
+      </p>
+    </section>
+
+    <section class="fade-up mt-10">
+      <h2 class="font-sans text-lg font-semibold tracking-tight text-ink">
+        {t.caseStudy.built}
+      </h2>
+      <p class="mt-3 font-serif text-lg leading-relaxed text-muted">
+        {data.built[locale]}
+      </p>
+    </section>
+
+    {
+      images?.gallery.map((image) => (
+        <div class="fade-up mt-8 overflow-hidden rounded-2xl border border-stone-200/80 bg-white/50 shadow-sm">
+          <Image
+            src={image}
+            alt=""
+            class="w-full"
+            widths={[640, 960, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+        </div>
+      ))
+    }
+
+    <section class="fade-up mt-10">
+      <h2 class="font-sans text-lg font-semibold tracking-tight text-ink">
+        {t.caseStudy.result}
+      </h2>
+      <p class="mt-3 font-serif text-lg leading-relaxed text-muted">
+        {data.result[locale]}
+      </p>
+    </section>
+
+    <div class="fade-up mt-16 rounded-2xl border border-stone-200/80 bg-white/40 p-8 text-center">
+      <p class="font-serif text-xl leading-relaxed text-ink">{t.caseStudy.cta}</p>
+      <a
+        href={localizedPath('/#contact', locale)}
+        class="mt-6 inline-block rounded-full bg-accent px-6 py-3 font-sans text-sm font-medium text-white no-underline transition-transform hover:scale-[1.02] active:scale-[0.98]"
+      >
+        {t.nav.getInTouch}
+      </a>
+    </div>
+  </article>
+</BaseLayout>

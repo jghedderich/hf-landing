@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, type Locale } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+export const prerender = true;
+---
+
+<BaseLayout title={`${t.privacy.title} — HF Software`}>
+  <section class="mx-auto max-w-2xl px-5 py-16 sm:py-20">
+    <div class="fade-up">
+      <h1 class="font-sans text-3xl font-semibold tracking-tight text-ink">
+        {t.privacy.title}
+      </h1>
+      <p class="mt-6 font-serif text-lg leading-relaxed text-muted">{t.privacy.body}</p>
+    </div>
+  </section>
+</BaseLayout>

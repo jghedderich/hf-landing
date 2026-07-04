@@ -1,0 +1,28 @@
+---
+interface Props {
+  class?: string;
+  width?: number;
+}
+
+const { class: className = '', width = 120 } = Astro.props;
+const height = (width / 120) * 8;
+---
+
+<svg
+  class={className}
+  width={width}
+  height={height}
+  viewBox="0 0 120 8"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <path
+    class="sketch-underline"
+    d="M1 5 C 20 2, 40 7, 60 4 S 100 6, 119 3"
+    stroke="#2563EB"
+    stroke-width="2"
+    stroke-linecap="round"
+    pathLength="200"
+  ></path>
+</svg>

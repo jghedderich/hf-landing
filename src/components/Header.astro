@@ -1,0 +1,62 @@
+---
+import Logo from './Logo.astro';
+import {
+  localizedPath,
+  switchLocalePath,
+  useTranslations,
+  type Locale,
+} from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+const contactHref = localizedPath('/#contact', locale);
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-stone-200/60 bg-paper/90 backdrop-blur-sm"
+>
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+    <a
+      href={localizedPath('/', locale)}
+      class="group flex items-center gap-2.5 text-ink no-underline"
+      aria-label="HF Software home"
+    >
+      <Logo class="h-9 w-9 shrink-0 transition-transform group-hover:-rotate-2" />
+      <span class="hidden font-sans text-sm font-medium tracking-tight sm:inline"
+        >Software</span
+      >
+    </a>
+
+    <div class="flex items-center gap-4 sm:gap-6">
+      <div class="flex items-center gap-1.5 font-mono text-xs tracking-wide">
+        <a
+          href={switchLocalePath(Astro.url.pathname, 'en')}
+          class:list={[
+            'no-underline transition-colors',
+            locale === 'en' ? 'text-accent' : 'text-muted hover:text-ink',
+          ]}
+          aria-current={locale === 'en' ? 'true' : undefined}
+        >
+          EN
+        </a>
+        <span class="text-stone-300">·</span>
+        <a
+          href={switchLocalePath(Astro.url.pathname, 'es')}
+          class:list={[
+            'no-underline transition-colors',
+            locale === 'es' ? 'text-accent' : 'text-muted hover:text-ink',
+          ]}
+          aria-current={locale === 'es' ? 'true' : undefined}
+        >
+          ES
+        </a>
+      </div>
+      <a
+        href={contactHref}
+        class="rounded-full bg-accent px-4 py-2 font-sans text-sm font-medium text-white no-underline transition-transform hover:scale-[1.02] active:scale-[0.98]"
+      >
+        {t.nav.getInTouch}
+      </a>
+    </div>
+  </div>
+</header>
