@@ -6,7 +6,7 @@ export default {
       colors: {
         paper: '#FAF7F2',
         ink: '#1C1917',
-        muted: '#78716C',
+        muted: '#57534E',
         accent: '#2563EB',
       },
       fontFamily: {
